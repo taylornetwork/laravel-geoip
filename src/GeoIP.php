@@ -73,7 +73,7 @@ class GeoIP
      * 
      * @return GuzzleClient
      */
-    protected function getGuzzleClient ()
+    public function getGuzzleClient ()
     {
         if (!isset($this->guzzleClient) || !$this->guzzleClient instanceof GuzzleClient)
         {
@@ -84,12 +84,22 @@ class GeoIP
     }
 
     /**
+     * Gets the driver instance
+     *
+     * @return Driver
+     */
+    public function getDriver ()
+    {
+        return $this->driver;
+    }
+
+    /**
      * Decode the response
      * 
      * @param $response
      * @return mixed
      */
-    protected function decode($response)
+    public function decode($response)
     {
         switch ($this->driver->property('responseType'))
         {
@@ -98,6 +108,7 @@ class GeoIP
                 break;
             
             case 'XML':
+                // @todo add XML support
                 return $response;
                 break;
             
