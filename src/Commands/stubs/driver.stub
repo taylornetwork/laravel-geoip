@@ -1,0 +1,23 @@
+<?php
+
+namespace DummyNamespace;
+
+use TaylorNetwork\GeoIP\Drivers\Driver;
+
+class DummyClass extends Driver
+{
+    /**
+     * Driver Definition
+     *
+     * Set all required properties here.
+     *
+     * @return void
+     */
+    public function define ()
+    {
+        $this->name = 'DummyClass';
+        $this->method = '';
+        $this->URL = '';
+        $this->responseType = '';
+    }
+}
