@@ -104,7 +104,7 @@ If called with no parameters, your IP address location is returned.
 
 Decodes the response given by `$response`.
 
-By default a JSON string is returned (see [makeRequest](#makerequest)), `decode` will decode the response with `json_decode` to return an object.
+By default a JSON string is returned (see [makeRequest](#makerequest-string--null-ip)), `decode` will decode the response with `json_decode` to return an object.
 
 ``` php
 $response = $geoip->makeRequest('8.8.8.8');
@@ -204,7 +204,7 @@ If you want to use your own function to find an IP address, or need to format th
 
 #### responseCallback (mixed $response)
 
-Called after an HTTP request, but before passing to the `GeoIP` decode function (see [Decode](#decode))
+Called after an HTTP request, but before passing to the `GeoIP` decode function (see [Decode](#decode-mixed-response))
 
 ``` php
 public function responseCallback($response) 
